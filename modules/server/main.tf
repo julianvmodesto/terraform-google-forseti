@@ -68,7 +68,6 @@ locals {
   server_bucket_roles = [
     "roles/storage.objectAdmin",
   ]
-
   network_interface_base = {
     private = [{
       subnetwork_project = "${local.network_project}"
@@ -81,7 +80,6 @@ locals {
       access_config      = ["${var.server_access_config}"]
     }]
   }
-
   network_interface = "${local.network_interface_base[var.server_private ? "private" : "public"]}"
 }
 
